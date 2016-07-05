@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block body %}
+    <form method="post">
+        <input type="text" name="msg">
+        {% for code,lang in languages.items() %}
+            <button type="submit" name="action" value="{{ code }}">Search {{ lang }} news</button>
+        {% end %}
+    </form>
+    <ul class="news">
+        {% for entry in entries %}
+            <li>
+                <div><img src="/images/{{ entry['img'] }}" height="100"> <a href="/news/{{ entry['news_id'] }}">{{ entry['title'] }} </a>: {{ entry['published'] }}</div>
+                <hr>
+            </li>
+        {% end %}
+    </ul>
+{% end %}

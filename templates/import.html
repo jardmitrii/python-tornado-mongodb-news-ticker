@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block body %}
+    <form method="post">
+        {% for code,lang in languages.items() %}
+            <button type="submit" name="action" value="{{ code }}">Import {{ lang }} news</button>
+        {% end %}
+    </form>
+{% end %}

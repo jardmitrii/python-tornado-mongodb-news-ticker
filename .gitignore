@@ -1,0 +1,4 @@
+upload/*
+.idea
+__pycache__
+env

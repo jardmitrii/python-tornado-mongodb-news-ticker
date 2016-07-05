@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block body %}
+    {{ error }}
+    <form enctype="multipart/form-data" action="/add" method="post">
+        Title <input type="text" name="title"> </br>
+        Text <input type="text" name="msg"> </br>
+        Image <input type="file" name="img"> </br>
+        {% for code,lang in languages.items() %}
+            <button type="submit" name="action" value="{{ code }}">Add {{ lang }} news</button>
+        {% end %}
+    </form>
+{% end %}

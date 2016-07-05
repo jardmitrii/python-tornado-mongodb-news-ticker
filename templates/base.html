@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ escape(handler.settings["title"]) }}</title>
+    <link rel="stylesheet" href="{{ static_url('base.css') }}" type="text/css">
+</head>
+<body>
+<div id="menu"> |
+    <a href="/">Main</a> |
+    <a href="/news/">News</a> |
+    <a href="/add/">Add a news</a> |
+    <a href="/search/">Search news</a> |
+    <a href="/import/">Import news</a> |
+</div>
+<br />
+<div id="page_numbers_up">{% block pages %}{% end %}</div>
+<div id="content">{% block body %}{% end %}</div>
+<div id="page_numbers_bottom">{% block pages %}{% end %}</div>
+</body>
+</html>
